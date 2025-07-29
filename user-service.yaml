@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: user-service
+    config:
+      uri: http://localhost:8888
+  datasource:
+    url: jdbc:postgresql://localhost:5440/Library
+    username: bereketab
+    password: bereketabInnowise
+  jpa:
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+server:
+  port: 8081

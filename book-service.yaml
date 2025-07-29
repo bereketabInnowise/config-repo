@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: book-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: book-service
+    config:
+      uri: http://localhost:8888
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Library_img
+server:
+  port: 8082
