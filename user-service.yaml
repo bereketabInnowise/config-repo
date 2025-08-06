@@ -9,10 +9,12 @@ spring:
         service-name: user-service
     config:
       uri: http://localhost:8888
+  jwt:
+    secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
   datasource:
-    url: jdbc:postgresql://localhost:5440/Library
-    username: bereketab
-    password: bereketabInnowise
+    url: jdbc:postgresql://localhost:5555/usersDB
+    username: bereketab24
+    password: bereketab24
   jpa:
     hibernate:
       ddl-auto: update

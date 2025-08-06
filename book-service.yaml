@@ -9,6 +9,18 @@ spring:
         service-name: book-service
     config:
       uri: http://localhost:8888
+  jwt:
+    secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
+  datasource:
+    url: jdbc:postgresql://localhost:5556/booksDB
+    username: bereketab24
+    password: bereketab24
+  jpa:
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    enabled: true
+    change-log: classpath:changelog/db.changelog-master.yaml
   data:
     mongodb:
       uri: mongodb://localhost:27017/Library_img

@@ -30,5 +30,8 @@ spring:
           uri: lb://book-service
           predicates:
             - Path=/api/v1/books/**
+  jwt:
+    secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
+
 server:
   port: 8080
