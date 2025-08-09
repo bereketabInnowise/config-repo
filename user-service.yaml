@@ -20,7 +20,7 @@ spring:
       ddl-auto: update
   liquibase:
     enabled: true
-    change-log: classpath:changelog/db.changelog-master.yaml
+    change-log: classpath:db/changelog/db.changelog-master.yaml
 server:
   port: 8081
 resilience4j:
