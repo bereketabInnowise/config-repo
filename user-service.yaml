@@ -3,16 +3,16 @@ spring:
     name: user-service
   cloud:
     consul:
-      host: localhost
+      host: consul # Corrected
       port: 8500
       discovery:
         service-name: user-service
     config:
-      uri: http://localhost:8888
+      uri: http://config-server:8888 # Corrected
   jwt:
     secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
   datasource:
-    url: jdbc:postgresql://localhost:5555/usersDB
+    url: jdbc:postgresql://postgres:5432/userdb # Corrected
     username: bereketab24
     password: bereketab24
   jpa:

@@ -3,16 +3,16 @@ spring:
     name: book-service
   cloud:
     consul:
-      host: localhost
+      host: consul
       port: 8500
       discovery:
         service-name: book-service
     config:
-      uri: http://localhost:8888
+      uri: http://config-server:8888
   jwt:
     secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
   datasource:
-    url: jdbc:postgresql://localhost:5556/booksDB
+    url: jdbc:postgresql://postgres:5432/bookdb # Corrected
     username: bereketab24
     password: bereketab24
   jpa:
@@ -23,6 +23,6 @@ spring:
     change-log: classpath:changelog/db.changelog-master.yaml
   data:
     mongodb:
-      uri: mongodb://localhost:27017/Library_img
+      uri: mongodb://mongo:27017/Library_img # Corrected
 server:
   port: 8082

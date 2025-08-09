@@ -3,12 +3,13 @@ spring:
     name: gateway
   cloud:
     consul:
-      host: localhost
+      host: consul
       port: 8500
       discovery:
         service-name: gateway
     config:
-      uri: http://localhost:8888
+#      uri: http://host.docker.internal:8888
+      uri: http://config-server:8888
     gateway:
       discovery:
         locator:
