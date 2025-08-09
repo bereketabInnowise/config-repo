@@ -31,6 +31,14 @@ spring:
           uri: lb://book-service
           predicates:
             - Path=/api/v1/books/**
+        - id: genre-service
+          uri: lb://book-service
+          predicates:
+            - Path=/api/v1/genres/**
+        - id: author-service
+          uri: lb://book-service
+          predicates:
+            - Path=/api/v1/authors/**
   jwt:
     secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
 
