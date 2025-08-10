@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    consul:
+      host: local
+      port: 8500
+      discovery:
+        service-name: gateway
+    config:
+#      uri: http://host.docker.internal:8888
+      uri: http://config-server:8888
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service-auth
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/register,/api/v1/login
+        - id: user-service-users
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/users/**
+        - id: user-service-admin
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/admin/**
+        - id: book-service
+          uri: lb://book-service
+          predicates:
+            - Path=/api/v1/books/**
+        - id: genre-service
+          uri: lb://book-service
+          predicates:
+            - Path=/api/v1/genres/**
+        - id: author-service
+          uri: lb://book-service
+          predicates:
+            - Path=/api/v1/authors/**
+  jwt:
+    secret: "szll3hCCGHtb57UYoWqKMB8Hs5rXFOaCoes+b7DFCPhRXcnMDxjjZX7Pl43d6WTbuzLxwXGsPZMA5ZAaqPyxkw=="
+
+server:
+  port: 8080
