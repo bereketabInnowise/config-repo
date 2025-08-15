@@ -26,3 +26,8 @@ spring:
       uri: mongodb://mongo:27017/Library_img # Corrected
 server:
   port: 8082
+management:
+ endpoints:
+   web:
+     exposure:
+       include: health,metrics,info,prometheus
