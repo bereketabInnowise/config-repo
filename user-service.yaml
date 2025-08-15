@@ -23,6 +23,11 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.yaml
 server:
   port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info,prometheus
 resilience4j:
   circuitbreaker:
     instances:
