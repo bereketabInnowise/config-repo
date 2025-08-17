@@ -28,6 +28,14 @@ management:
     web:
       exposure:
         include: health,metrics,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    enable:
+      jvm: true
+      system: true
+      process: true
 resilience4j:
   circuitbreaker:
     instances:
